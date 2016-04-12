@@ -1,0 +1,18 @@
+﻿{
+  "version": "2.2.1",
+  "ignore": [],
+  "options": {
+    "bitwise": true,
+    "browser": true,
+    "couch": true,
+    "devel": true,
+    "es6": true,
+    "eval": true,
+    "for": true,
+    "multivar": true,
+    "node": true,
+    "this": true,
+    "white": true
+  },
+  "globalVariables": []
+}
