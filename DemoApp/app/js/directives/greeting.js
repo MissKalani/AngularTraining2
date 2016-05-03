@@ -6,11 +6,34 @@ eventsApp.directive('greeting', function () {
         replace: true,
         template: "<button class='btn' ng-click='sayHello()'>Say Hello</button>",
         controller: function ($scope) {
+            var greetings = ['hello'];
+            
             $scope.sayHello = function () {
-                alert('Hello');
+                alert(greetings.join());
+            }
+            this.addGreeting = function (greeting) {
+                greetings.push(greeting);
             }
         }
     };
 
 
+})
+.directive('finnish', function () {
+    return {
+        restrict: 'A',
+        require: 'greeting',
+        link: function (scope, element, attrs, controller) {
+            controller.addGreeting('hei');
+        }
+    }
+})
+.directive('swedish', function () {
+    return {
+        restrict: 'A',
+        require: 'greeting',
+        link: function (scope, element, attrs, controller) {
+            controller.addGreeting('hej');
+        }
+    }
 });
