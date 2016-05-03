@@ -8,7 +8,8 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>WindowsApplication</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -41,7 +42,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Jurassic, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Jurassic.2.1.1\lib\Jurassic.dll</HintPath>
+      <HintPath>packages\Jurassic.2.2.1\lib\net35\Jurassic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,11 +58,34 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="app\data\event\1.json" />
     <None Include="app\data\event\2.json" />
     <None Include="app\data\event\3.json" />
@@ -410,6 +442,7 @@
     <Content Include="app\datepickerDirectiveFiles\calendarHelper.js" />
     <Content Include="app\datepickerDirectiveFiles\datepicker.html" />
     <Content Include="app\datepickerDirectiveFiles\datepicker.js" />
+    <Content Include="app\DirectiveControllerSample.html" />
     <Content Include="app\EditProfile.html" />
     <Content Include="app\EditProfileFiles\Finished\EditProfile.html" />
     <Content Include="app\EditProfileFiles\Finished\EditProfileController.js" />
@@ -417,7 +450,18 @@
     <Content Include="app\EditProfileFiles\Original\EditProfile.html" />
     <Content Include="app\EditProfileFiles\Original\EditProfileController.js" />
     <Content Include="app\EditProfileFiles\Original\GravatarUrlBuilder.js" />
-    <Content Include="app\EventDetails.html" />
+    <Content Include="app\js\controllers\MainMenuController.js" />
+    <Content Include="app\js\controllers\SampleDirectiveController.js" />
+    <Content Include="app\js\directives\datekeys.js" />
+    <Content Include="app\js\directives\eventThumbnail.js" />
+    <Content Include="app\js\directives\gravatar.js" />
+    <Content Include="app\js\directives\greeting.js" />
+    <Content Include="app\js\directives\mySample.js" />
+    <Content Include="app\js\directives\upvote.js" />
+    <Content Include="app\templates\directives\downvote.html" />
+    <Content Include="app\templates\directives\eventThumbnail.html" />
+    <Content Include="app\templates\directives\upvote.html" />
+    <Content Include="app\templates\EventDetails.html" />
     <Content Include="app\favicon.ico" />
     <Content Include="app\FilterSample.html" />
     <Content Include="app\img\angularjs-logo.png" />
@@ -432,10 +476,10 @@
     <Content Include="app\js\controllers\EditEventController.js" />
     <Content Include="app\js\controllers\EditProfileController.js" />
     <Content Include="app\js\controllers\EventController.js" />
+    <Content Include="app\js\controllers\EventListController.js" />
     <Content Include="app\js\controllers\FilterSampleController.js" />
     <Content Include="app\js\controllers\LocalSampleController.js" />
     <Content Include="app\js\controllers\TimeoutSampleController.js" />
-    <Content Include="app\js\directives.js" />
     <Content Include="app\js\filters.js" />
     <Content Include="app\js\services\EventData.js" />
     <Content Include="app\js\services\ExceptionHandler.js" />
@@ -456,7 +500,9 @@
     <Content Include="app\lib\jquery.min.js" />
     <Content Include="app\lib\underscore-1.4.4.min.js" />
     <Content Include="app\LocalSample.html" />
+    <Content Include="app\templates\EventList.html" />
     <Content Include="app\templates\NewEvent.html" />
+    <Content Include="app\templates\SampleDirective.html" />
     <Content Include="app\TimeoutSample.html" />
     <Content Include="node_modules\body-parser\index.js" />
     <Content Include="node_modules\body-parser\lib\read.js" />
@@ -629,11 +675,4 @@
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
   </ProjectExtensions>
-  <Import Project="packages\JSLintNet.MSBuild.2.2.1\build\JSLintNet.MSBuild.targets" Condition="Exists('packages\JSLintNet.MSBuild.2.2.1\build\JSLintNet.MSBuild.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\JSLintNet.MSBuild.2.2.1\build\JSLintNet.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\JSLintNet.MSBuild.2.2.1\build\JSLintNet.MSBuild.targets'))" />
-  </Target>
 </Project>

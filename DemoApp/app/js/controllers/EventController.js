@@ -2,17 +2,24 @@
 
 eventsApp.controller('EventController',
 
-    function EventController($scope, eventData, $anchorScroll, $location) {
+    function EventController($scope, eventData, $routeParams, $route) {
+       
         $scope.sortorder = 'name';
-        $scope.snippet = '<span style="color:red">hi there</span>';
-        $scope.boolValue = true;
-        $scope.mystyle = { color: 'red' };
-        $scope.myclass = "blue";
-        eventData.getEvent()
-            .$promise
-            .then(function (event) { $scope.event = event; console.log(event); })
-            .catch(function (response) {console.log(response);}
-            );
+        //$scope.event = eventData.getEvent($routeParams.eventId);
+        $scope.event = $route.current.locals.event;
+
+        $scope.reload = function () {
+            $route.reload();
+        }
+
+
+        console.log($route.current.params.foo);
+
+        //eventData.getEvent()
+        //    .$promise
+        //    .then(function (event) { $scope.event = event; console.log(event); })
+        //    .catch(function (response) {console.log(response);}
+        //    );
         
 
         //eventData.getEvent()
@@ -29,7 +36,5 @@ eventsApp.controller('EventController',
             session.upVoteCount--;
         };
 
-        $scope.scrollToSession = function () {       
-            $anchorScroll();
-        }
+  
     });
